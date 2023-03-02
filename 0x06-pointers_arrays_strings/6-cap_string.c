@@ -1,9 +1,8 @@
 #include "main.h"
 /**
- * cap_string - Capitalizes all words of a string.
- * @str: The string to be capitalized.
- *
- * Return: A pointer to the changed string.
+ * _indexOf - returns boolean if special  character
+ * @a: character to return
+ * Return: true or false
  */
 int _indexOf(char a)
 {
@@ -17,4 +16,23 @@ int _indexOf(char a)
 			return (1);
 	}
 	return (0);
+}
+/**
+ * cap_string - capitalizes the string
+ * @s: string
+ * Return: the string capitalized
+ */
+char *cap_string(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (_indexOf(s[i]))
+			continue;
+		if (s[i] >= 'a' && s[i] <= 'z' && (_indexOf(s[i - 1]) || i == 0))
+			s[i] = s[i] - 32;
+
+	}
+	return (s);
 }
