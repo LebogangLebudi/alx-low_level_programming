@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#define UNUSED(x) (void)(x)
+#include <stdlib.h>
 /**
  * main - main function
  * @argc: argumentc
@@ -9,11 +9,12 @@
  */
 int main(int argc, char  *argv[])
 {
-	int i;
-
-	for (i = 0; i < argc; i++)
+	if (argc == 3)
 	{
-		printf("%s\n", argv[i]);
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+		return (0);
 	}
-	return (0);
+	else
+		printf("Error\n");
+	return (1);
 }
